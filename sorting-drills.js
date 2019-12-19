@@ -104,11 +104,11 @@ function main2() {
     console.log(quickSort([3, 9, 1, 14, 17, 24, 22, 20]))
 }
 
-main2();
+//main2();
 
 //.2
 // Which of the following statements is correct about the partition step? Explain your answer.
-// Neither 14 nor 17 could have been the pivot we believe that the first partition step was 24. 
+// Neither 14 nor 17 could have been the pivot we believe that the first partition step was 24.
 //
 // Given the following list of numbers 14, 17, 13, 15, 19, 10, 3, 16, 9, 12 show the resulting list after the second partitioning according to the quicksort algorithm.
 //When using the last item on the list as a pivot
@@ -162,56 +162,62 @@ function main5() {
 
 //main5();
 function main6() {
-    function arrSort(arr, min, max){
-        let array = new Array(max-min);
-        for(let i = 0; i < arr.length; i++){
-            array[arr[i]-min] = arr[i];
+    function arrSort(arr, min, max) {
+        let array = new Array(max - min);
+        for (let i = 0; i < arr.length; i++) {
+            array[arr[i] - min] = arr[i];
         }
-        return array.filter(n=>n);
+        return array.filter(n => n);
     }
-    let arr = [3, 5, 9, 4, 6, 10, 12, 50,48,62,75,2,14 ];
-    console.log(arrSort(arr,2,75))
+
+    let arr = [3, 5, 9, 4, 6, 10, 12, 50, 48, 62, 75, 2, 14];
+    console.log(arrSort(arr, 2, 75))
 
 }
+
 //main6();
 
 //7
-function main7(){
-    function randomSort(arr){
-        for(let i = 0; i<Math.floor(arr.length/2); i++) {
-            swap(arr, i, Math.floor(Math.random()*(arr.length)))
+function main7() {
+    function randomSort(arr) {
+        for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+            swap(arr, i, Math.floor(Math.random() * (arr.length)))
         }
         return arr;
     }
-    console.log(randomSort([1,2,3,4,5,6,7,8]))
+
+    console.log(randomSort([1, 2, 3, 4, 5, 6, 7, 8]))
 }
+
 //main7();
 
-function main8(){
-    let arr = ['Lord of the Rings', 'Guardians of The Galaxy', 'Hitchhikers: Guide to the Galaxy', 'Go Giver', 'How to win friends', 'Spaghetii', 'The travels of Marco Polo'];
+function main8() {
+    let arr = ['Lord of the Rings', 'Guardians of The Galaxy', 'Hitchhikers: Guide to the Galaxy', 'Go Giver', 'How to win friends', 'Spaghetti', 'The travels of Marco Polo'];
+    // Expression of code :
+    //Sorts alphabetically
     function bookSort(bookArr, x = 0, y = bookArr.length) {
         function pBook(bookArr, x, y) {
             const bookEnd = bookArr[y - 1];
-            let j = x;
+            let k = x;
             for (let i = x; i < y - 1; i++) {
                 if (bookArr[i] <= bookEnd) {
-                    swap(bookArr, i, j);
-                    j++;
+                    swap(bookArr, i, k);
+                    k++;
                 }
             }
-            swap(bookArr, y - 1, j);
-            return j;
+            swap(bookArr, y - 1, k);
+            return k;
         }
 
         if (x >= y) {
             return bookArr;
         }
-        const middle = pBook(bookArr, x, y);
-        bookArr = bookSort(bookArr, x, middle);
-        bookArr = bookSort(bookArr, middle + 1, y);
+        const mid = pBook(bookArr, x, y);
+        bookArr = bookSort(bookArr, x, mid);
+        bookArr = bookSort(bookArr, mid + 1, y);
         return bookArr;
     }
-
     console.log(bookSort(arr));
 }
-//main8();
+
+main8();
