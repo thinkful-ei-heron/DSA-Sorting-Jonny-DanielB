@@ -162,7 +162,7 @@ function main5() {
 
 //main5();
 function main6() {
-    function arrSort(arr, min, max) {
+    function djSORT(arr, min, max) {
         let array = new Array(max - min);
         for (let i = 0; i < arr.length; i++) {
             array[arr[i] - min] = arr[i];
@@ -171,7 +171,7 @@ function main6() {
     }
 
     let arr = [3, 5, 9, 4, 6, 10, 12, 50, 48, 62, 75, 2, 14];
-    console.log(arrSort(arr, 2, 75))
+    console.log(djSORT(arr, 2, 75))
 
 }
 
