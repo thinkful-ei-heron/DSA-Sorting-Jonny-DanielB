@@ -30,7 +30,7 @@ function merge(left, right, array) {
 
 function partition(array, start, end) {
     const pivot = array[end - 1];
-    console.log(array, start, end, pivot)
+    console.log(array, start, end, pivot);
     let j = start;
     for (let i = start; i < end - 1; i++) {
         if (array[i] <= pivot) {
@@ -108,7 +108,7 @@ main2();
 
 //.2
 // Which of the following statements is correct about the partition step? Explain your answer.
-//
+// Neither 14 nor 17 could have been the pivot we believe that the first partition step was 24. 
 //
 // Given the following list of numbers 14, 17, 13, 15, 19, 10, 3, 16, 9, 12 show the resulting list after the second partitioning according to the quicksort algorithm.
 //When using the last item on the list as a pivot
@@ -190,16 +190,16 @@ function main7(){
 function main8(){
     let arr = ['Lord of the Rings', 'Guardians of The Galaxy', 'Hitchhikers: Guide to the Galaxy', 'Go Giver', 'How to win friends', 'Spaghetii', 'The travels of Marco Polo'];
     function bookSort(bookArr, x = 0, y = bookArr.length) {
-        function pBook(bookarr, x, y) {
-            const bookEnd = bookarr[y - 1];
+        function pBook(bookArr, x, y) {
+            const bookEnd = bookArr[y - 1];
             let j = x;
             for (let i = x; i < y - 1; i++) {
-                if (bookarr[i] <= bookEnd) {
-                    swap(bookarr, i, j);
+                if (bookArr[i] <= bookEnd) {
+                    swap(bookArr, i, j);
                     j++;
                 }
             }
-            swap(bookarr, y - 1, j);
+            swap(bookArr, y - 1, j);
             return j;
         }
 
