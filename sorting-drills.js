@@ -218,6 +218,7 @@ function main8() {
         return bookArr;
     }
     console.log(bookSort(arr));
+
 }
 
 main8();
